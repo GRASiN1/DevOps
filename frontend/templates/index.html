@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #000000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1{
+            color: yellow;
+            font-size: 24px;
+            text-align: center;
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .form input{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 200px;
+        }
+        .form button{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 215px;
+        }
+        button{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            width: 215px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Api service running</h1>
+    <h1>Today is {{ day }}</h1>
+    <form action="/form" method="post" class="form">
+        <input type="text" name="name" placeholder="Enter your name">
+        <input type="text" name="age" placeholder="Enter your age">
+        <input type="text" name="city" placeholder="Enter your city">
+        <button type="submit">Submit</button>
+    </form>
+    <a href="/getUsers"><button>Get Users</button></a>
+</body>
+</html>
