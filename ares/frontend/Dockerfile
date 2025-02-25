@@ -2,9 +2,9 @@ FROM node:16-alpine
 
 ENV URL=http://0.0.0.0:5000/api
 
-ADD frontend /app
-
 WORKDIR /app
+
+ADD . .
 
 RUN npm install
 

@@ -1,0 +1,30 @@
+version: '3.6'
+
+services:
+  backend:
+    build: backend
+    hostname: backend-host
+    volumes:
+      - ./backend:/app
+    ports:
+      - "5000:5000"
+    networks:
+      - ares-network
+  frontend:
+    build: frontend
+    hostname: frontend-host
+    volumes:
+      - ./frontend:/app
+    environment:
+      - URL=http://backend-host:5000/api  # Remove the extra quotes
+    ports:
+      - "3000:3000"
+    links:
+      - backend
+    depends_on:
+      - backend
+    networks:
+      - ares-network
+
+networks:
+  ares-network: {}
