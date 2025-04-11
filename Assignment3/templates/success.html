@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Success</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .success-message {
+            color: #4CAF50;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        .back-link {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Success!</h1>
+    <div class="success-message">Data submitted successfully</div>
+    <a href="{{ url_for('index') }}" class="back-link">Back to Form</a>
+</body>
+</html> 
