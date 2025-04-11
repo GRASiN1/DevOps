@@ -13,6 +13,7 @@ client = MongoClient(
 )
 db = client['Devops']
 collection = db['assignment']
+collection2 = db['todo']
 
 @app.route("/api")
 def get_data():
@@ -41,6 +42,20 @@ def submit():
     except Exception as e:
         flash(f"Error: {str(e)}", 'error')
         return redirect(url_for('index'))
+    
+@app.route("/addToDo", methods=['POST'])
+def addToDo():
+    data = {
+        'name': request.form.get('name'),
+        'description': request.form.get('description')
+    }
+    collection2.insert_one(data)
+    return redirect(url_for('todo'))
+
+@app.route("/todo", methods=['GET'])
+def todo():
+    items = collection2.find()
+    return render_template('todo.html', items=items)
 
 @app.route("/success")
 def success():
